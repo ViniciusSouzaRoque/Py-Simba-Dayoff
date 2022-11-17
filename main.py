@@ -1,5 +1,5 @@
 from fastapi import FastAPI, APIRouter
-from views import user_router, assets_router, events_router, member_router
+from routers.views import user_router, assets_router, events_router, member_router
 
 app = FastAPI()
 router = APIRouter()

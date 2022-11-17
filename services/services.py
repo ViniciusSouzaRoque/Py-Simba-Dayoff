@@ -6,7 +6,6 @@ from database.models import User, Favorite
 from database.connection import async_session
 
 
-# noinspection PyMethodParameters
 class UserService:
     async def create_user(name: str):
         async with async_session() as session:

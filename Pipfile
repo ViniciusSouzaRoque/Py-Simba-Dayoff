@@ -9,6 +9,7 @@ sqlalchemy = "*"
 asyncpg = "*"
 python-dotenv = "*"
 uvicorn = "*"
+passlib = "*"
 
 [dev-packages]
 

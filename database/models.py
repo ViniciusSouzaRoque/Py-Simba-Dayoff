@@ -1,4 +1,3 @@
-
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Boolean, Date, Time, LargeBinary
 from sqlalchemy.orm import declarative_base, relationship
 
@@ -30,7 +29,7 @@ class Member(Base):
     cpf = Column(String)
     email = Column(String)
     password = Column(String)
-    zip = Column(String)
+    zip = Column(String)  # todo: create a auto request to get information
     birthday = Column(DateTime)
     street = Column(String)
     number = Column(String)
