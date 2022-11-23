@@ -11,7 +11,6 @@ from schemas.schemas import UserCreateInput, StandardOutput, ErrorOutput, UserFa
 user_router = APIRouter(prefix='/user')
 assets_router = APIRouter(prefix='/assets')
 member_router = APIRouter(prefix='/member')
-events_router = APIRouter(prefix='/events')
 
 
 @user_router.post('/create', description='Route to add users', response_model=StandardOutput,
