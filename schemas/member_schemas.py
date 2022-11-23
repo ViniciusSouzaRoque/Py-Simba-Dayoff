@@ -27,6 +27,6 @@ class MemberCreateInput(BaseModel):
     children_qty: Optional[int] = None
     children_names: Optional[str] = None
     marital_state: Optional[str] = None
-    Status: Optional[StatusOptions] = None
+    status: Optional[StatusOptions] = StatusOptions.Active
     created_at: Optional[datetime] = datetime.now()
     # Events = backref events

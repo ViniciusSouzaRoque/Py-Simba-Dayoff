@@ -1,6 +1,4 @@
 from sqlalchemy.ext.asyncio.session import async_session
-from sqlalchemy import delete
-from sqlalchemy.future import select
 
 from database.models import Member
 from database.connection import async_session
