@@ -10,6 +10,7 @@ asyncpg = "*"
 python-dotenv = "*"
 uvicorn = "*"
 passlib = "*"
+python-jose = {extras = ["cryptography"], version = "*"}
 
 [dev-packages]
 
