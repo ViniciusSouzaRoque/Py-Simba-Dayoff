@@ -1,8 +1,9 @@
 from sqlalchemy.ext.asyncio.session import async_session
+from sqlalchemy.future import select
 
 from database.models import Member
 from database.connection import async_session
-from schemas.member_schemas import MemberCreateInput
+from schemas.member_schemas import MemberCreateInput, MemberListOutput
 from providers.hash_provider import gerar_hash
 
 
@@ -27,6 +28,10 @@ class MemberService:
                 children_names=user.children_names,
                 marital_state=user.marital_state,
                 created_at=user.created_at
-
             ))
             await session.commit()
+
+    async def list_member():
+        async with async_session() as session:
+            result = await session.execute(select(Member))
+            return result.scalars().all()

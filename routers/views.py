@@ -2,15 +2,12 @@ from typing import List
 
 from fastapi import APIRouter, HTTPException
 from services.services import UserService, FavoriteService
-from services.member_services import MemberService
-from schemas.member_schemas import MemberCreateInput
 
 from schemas.schemas import UserCreateInput, StandardOutput, ErrorOutput, UserFavoriteAddInput, UserFavoriteRemove, \
     UserListOutput
 
 user_router = APIRouter(prefix='/user')
 assets_router = APIRouter(prefix='/assets')
-member_router = APIRouter(prefix='/member')
 
 
 @user_router.post('/create', description='Route to add users', response_model=StandardOutput,
@@ -56,15 +53,3 @@ async def user_list():
         return await UserService.list_user()
     except Exception as error:
         raise HTTPException(400, {'detail': f'{str(error)}'})
-
-
-@member_router.post('/create', description='Route to add users', response_model=StandardOutput,
-                  responses={400: {'model': ErrorOutput}})
-async def create_member(user: MemberCreateInput):
-    try:
-        await MemberService.create_member(
-            user)
-        return {'message': 'Show!'}
-    except Exception as error:
-        raise HTTPException(400, {'detail': f'{str(error)}'})
-

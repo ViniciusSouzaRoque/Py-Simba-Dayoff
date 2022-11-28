@@ -30,3 +30,14 @@ class MemberCreateInput(BaseModel):
     status: Optional[StatusOptions] = StatusOptions.Active
     created_at: Optional[datetime] = datetime.now()
     # Events = backref events
+
+
+class MemberListOutput(BaseModel):
+    member_id: int
+    first_name: str
+    last_name: str
+    cpf: str
+    email: str
+
+    class Config:
+        orm_mode = True
